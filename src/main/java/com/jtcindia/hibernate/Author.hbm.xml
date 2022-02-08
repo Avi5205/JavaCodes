@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jtcindia.hibernate">
+    <class name="Author" table="Authors">
+        <id name="aid" column="aid" type="int">
+            <generator class="increment"/>
+        </id>
+
+        <property name="aname"/>
+        <property name="email"/>
+        <property name="phone" type="long"/>
+        <property name="dob" type="date"/>
+        <list name="quails" table="quails">
+            <key column="aid"/>
+            <index/>
+            <element column="quails" type="string"/>
+        </list>
+        <set name="exps">
+            <key column="aid"/>
+            <element column="exp" type="string"/>
+        </set>
+        <set name="books" table="books_authors">
+            <key column="aid"/>
+            <many-to-many class="Book" column="bid"/>
+        </set>
+
+    </class>
+
+</hibernate-mapping>

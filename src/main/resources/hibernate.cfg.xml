@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.pool_size">99</property>
+        <property name="dialect">org.hibernate.dialect.Oracle8iDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="com.jtcindia.hibernate.Author"/>
+        <mapping class="com.jtcindia.hibernate.Book"/>
+        <mapping class="com.jtcindia.hibernate.CreditCard"/>
+        <mapping class="com.jtcindia.hibernate.Customer"/>
+        <mapping class="com.jtcindia.hibernate.Order"/>
+        <mapping class="com.jtcindia.hibernate.OrderItem"/>
+        <mapping class="com.jtcindia.hibernate.ShippingAddress"/>
+
+
+
+
+    </session-factory>
+</hibernate-configuration>

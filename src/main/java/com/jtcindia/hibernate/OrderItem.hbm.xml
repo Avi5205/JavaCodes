@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jtcindia.hibernate">
+    <class name="OrderItem" table="orderItems">
+        <id name="otid" column="otid" type="int">
+            <generator class="increment"/>
+        </id>
+        <property name="qty" type="int"/>
+        <property name="cost" type="double"/>
+        <many-to-one name="order" class="Order" column="orderId"/>
+        <many-to-one name="book" class="Book" column="bid"/>
+    </class>
+</hibernate-mapping>
